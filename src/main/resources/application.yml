@@ -1,0 +1,16 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+springfox:
+  documentation:
+    swagger:
+      v2:
+        use-model-v3: false
+    swagger-ui:
+      enabled: true
+
+serp:
+  api:
+    url: 'https://serpapi.com'
+    key: '0ce99799500c4fb70319f9abbbfdb3b7e4dfa87d4def0be65cfd08df469c2fd7'

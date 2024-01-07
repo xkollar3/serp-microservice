@@ -1,0 +1,6 @@
+services:
+  web:
+    container_name: "serp-microservice"
+    build: .
+    ports:
+      - "9080:8080"
