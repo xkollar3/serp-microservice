@@ -1,11 +1,7 @@
-FROM eclipse-temurin:17-jdk-alpine
-
+FROM maven:3.6.3-openjdk-17
 WORKDIR /serp-microservice
 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:resolve
-
-COPY src ./src
-
-CMD ["./mvnw", "spring-boot:run"]
+COPY ./pom.xml ./pom.xml
+COPY ./src ./src
+RUN mvn clean package
+CMD ["java", "-jar", "target/serp-microservice-0.0.1-SNAPSHOT.jar"]
